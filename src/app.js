@@ -13,7 +13,7 @@ const server = http.createServer((req, res) => {
       const value = obj.num1;
 
       // Write the code here to check if the number is odd or even
-      if (num1 % 2 === 0) {
+      if (Number(value) % 2 === 0) {
         res.statusCode = 200;
         res.setHeader("Content-Type", "text/plain");
         res.end("The number is even");
