@@ -20,7 +20,7 @@ const server = http.createServer((req, res) => {
         res.statusCode = 200;
         res.end(`The number  ${value} is even `);
       } else {
-        res.statusCode = 400;
+        res.statusCode = 404;
         res.end(`The number ${value} is odd`);
       }
     });
