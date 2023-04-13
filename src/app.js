@@ -11,14 +11,14 @@ const server = http.createServer((req, res) => {
 
       const obj = JSON.parse(chunks);
       const value = obj.num1;
-      if (!value || Number.isNaN(value)) {
+      if (!value || Number.isNaN(Number(value))) {
         res.statusCode = 400;
         res.end("Bad request");
         return;
       }
-      if (value % 2 == 0) {
+      if (Number(value) % 2 == 0) {
         res.statusCode = 200;
-        res.end(`The number  ${value} is even `);
+        res.end(`The number ${value} is even `);
       } else {
         res.statusCode = 404;
         res.end(`The number ${value} is odd`);
