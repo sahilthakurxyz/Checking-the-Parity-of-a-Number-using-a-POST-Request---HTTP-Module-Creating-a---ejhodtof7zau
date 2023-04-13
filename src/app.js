@@ -16,9 +16,9 @@ const server = http.createServer((req, res) => {
         res.end("Bad request");
         return;
       }
-      if (Number(value) % 2 == 0) {
+      if (value % 2 == 0) {
         res.statusCode = 200;
-        res.end(`The number ${value} is even `);
+        res.end(`The number ${value} is even`);
       } else {
         res.statusCode = 404;
         res.end(`The number ${value} is odd`);
